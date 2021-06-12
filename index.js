@@ -1,7 +1,7 @@
 const tryCatchWrapper = function (func) {
   try {
     const result = func();
-    return [result, undefined];
+    return [result, null];
   } catch (error) {
     return [null, error];
   }
