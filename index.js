@@ -1,10 +1,9 @@
-const log = console.log;
-
 const tryCatchWrapper = function (func) {
   try {
-    func();
+    const result = func();
+    return [result, undefined];
   } catch (error) {
-    console.log("Error happened");
+    return [null, error];
   }
 }
 
@@ -14,7 +13,9 @@ const tryCatch = function (func, ...args) {
 
 function test(a, b, c) {
   console.log({a, b, c})
-  console.log(window.mm.a);
+  return a + b + c;
 }
 
-tryCatch(test, 10, 20, 430);
+const [result, error] = tryCatch(test, 10, 20, 430);
+
+console.log({result, error})
