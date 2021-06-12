@@ -7,15 +7,6 @@ const tryCatchWrapper = function (func) {
   }
 }
 
-const tryCatch = function (func, ...args) {
+module.exports.tryCatch = function (func, ...args) {
   return tryCatchWrapper(func.bind(this, ...args))
 }
-
-function test(a, b, c) {
-  console.log({a, b, c})
-  return a + b + c;
-}
-
-const [result, error] = tryCatch(test, 10, 20, 430);
-
-console.log({result, error})
