@@ -8,13 +8,13 @@ const tryCatchWrapper = function (func) {
   }
 }
 
-const tryCatch = function (func, arg) {
-  return tryCatchWrapper(func.bind(this, arg))
+const tryCatch = function (func, ...args) {
+  return tryCatchWrapper(func.bind(this, ...args))
 }
 
-function test(a) {
-  console.log({a})
+function test(a, b, c) {
+  console.log({a, b, c})
   console.log(window.mm.a);
 }
 
-tryCatch(test.bind(this, 1));
+tryCatch(test, 10, 20, 430);
