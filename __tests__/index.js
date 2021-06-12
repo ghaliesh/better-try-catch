@@ -17,3 +17,27 @@ test("It gracefully returns an error when an error happen", () => {
   expect(error).not.toBeNull();
   expect(result).toBeNull();
 });
+
+const returnValue = 10;
+function functionThatWillPass() {
+  return returnValue;
+}
+
+test("It returns a result with no error", () => {
+  const [result, error] = tryCatch(functionThatWillPass);
+  expect(result).not.toBeNull();
+  expect(result).toEqual(returnValue);
+  expect(error).toBeNull();
+});
+
+function voidfunctionThatWillPass() {
+  Promise.resolve("Hi");
+}
+
+test("It returns undefined as a result with no error", () => {
+  const [result, error] = tryCatch(voidfunctionThatWillPass);
+  expect(result).not.toBeNull();
+  /** void function returns undefined */
+  expect(result).toEqual(undefined);
+  expect(error).toBeNull();
+});
