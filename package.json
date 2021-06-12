@@ -1,0 +1,17 @@
+{
+  "name": "better-try-catch",
+  "version": "1.0.0",
+  "description": "Wrapper for your tower of try-catches",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "try-catch",
+    "node",
+    "react",
+    "utils"
+  ],
+  "author": "Ghazwan Aliesh",
+  "license": "ISC"
+}
