@@ -13,5 +13,8 @@
     "utils"
   ],
   "author": "Ghazwan Aliesh",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.0.4"
+  }
 }
